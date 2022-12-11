@@ -7,16 +7,26 @@ using TMPro;
 
 public class QuestionsHit : MonoBehaviour
 {
-    public GameObject questiontext1;
+    public TMP_Text questiontext1;
 
-    void OnTriggerStay2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Question 1 affichée.");
-            questiontext1.SetActive(true);
 
-        }    
+            // activé la question sur l'écran 
+            // chercher la sauvegarde
+            Quest1();
+        }
     }
+
+    // Définir les slots mémoires à aller chercher 
+    
+    public void Quest1()
+    {
+        questiontext1.text = PlayerPrefs.GetString("Case1", "Pas de question choisie");
+    }
+    
 
     
 }
