@@ -13,9 +13,11 @@ public class GameControl : MonoBehaviour {
 
     public static bool gameOver = false;
 
+
     // Use this for initialization
     void Start () {
 
+        
         whoWinsTextShadow = GameObject.Find("WhoWinsText");
         player1MoveText = GameObject.Find("Player1MoveText");
         player2MoveText = GameObject.Find("Player2MoveText");
@@ -69,6 +71,9 @@ public class GameControl : MonoBehaviour {
             whoWinsTextShadow.GetComponent<Text>().text = "Player 2 Wins";
             gameOver = true;
         }
+        
+
+
     }
 
     public static void MovePlayer(int playerToMove)

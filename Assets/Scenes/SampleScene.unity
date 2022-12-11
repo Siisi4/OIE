@@ -516,11 +516,11 @@ GameObject:
   - component: {fileID: 355938322}
   - component: {fileID: 355938321}
   - component: {fileID: 355938323}
-  - component: {fileID: 355938324}
   - component: {fileID: 355938325}
+  - component: {fileID: 355938324}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,19 +637,27 @@ MonoBehaviour:
   moveSpeed: 3
   waypointIndex: 0
   moveAllowed: 0
---- !u!114 &355938324
-MonoBehaviour:
+--- !u!50 &355938324
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355938320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5922b4ef04c9043a97ba679dfe846f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question1: {fileID: 1589161649}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &355938325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -660,7 +668,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -716,6 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422466189}
   - component: {fileID: 422466190}
+  - component: {fileID: 422466191}
   m_Layer: 0
   m_Name: Waypoint (1)
   m_TagString: Question
@@ -763,6 +772,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &422466191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422466188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5922b4ef04c9043a97ba679dfe846f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questiontext1: {fileID: 1589161649}
 --- !u!1 &456600284
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,9 +967,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558119382}
+  - component: {fileID: 558119383}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: Question
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -966,6 +989,19 @@ Transform:
   m_Father: {fileID: 675316066}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &558119383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558119381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6145911, y: 1.5531349, z: 1}
+  m_Center: {x: 0.030729532, y: -0.06145954, z: 0}
 --- !u!1 &576203300
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,9 +1013,11 @@ GameObject:
   - component: {fileID: 576203302}
   - component: {fileID: 576203301}
   - component: {fileID: 576203303}
+  - component: {fileID: 576203305}
+  - component: {fileID: 576203304}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,6 +1134,53 @@ MonoBehaviour:
   moveSpeed: 3
   waypointIndex: 0
   moveAllowed: 0
+--- !u!61 &576203304
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576203300}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6466668, y: 3.26}
+    newSize: {x: 2.6466668, y: 3.26}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6466668, y: 3.26}
+  m_EdgeRadius: 0
+--- !u!50 &576203305
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576203300}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &627879540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5922b4ef04c9043a97ba679dfe846f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question1: {fileID: 1589161649}
+  questiontext1: {fileID: 0}
 --- !u!1 &925646362
 GameObject:
   m_ObjectHideFlags: 0

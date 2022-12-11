@@ -2,28 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AI;
+using TMPro;
+
 
 public class QuestionsHit : MonoBehaviour
 {
-    public GameObject question1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public GameObject questiontext1;
+
+    void OnTriggerStay2D(Collider2D other){
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Question 1 affichée.");
+            questiontext1.SetActive(true);
+
+        }    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.name == "Question"){
-            Debug.Log("Question 1 activé !");
-            question1.SetActive(true);
-        }
-
-    }
+    
 }
