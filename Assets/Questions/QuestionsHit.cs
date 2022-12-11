@@ -20,13 +20,13 @@ public class QuestionsHit : MonoBehaviour
         }
     }
 
+    // la question s'affiche en boucle, après avoir quitter 
+
+
     // Définir les slots mémoires à aller chercher 
     
     public void Quest1()
     {
         questiontext1.text = PlayerPrefs.GetString("Case1", "Pas de question choisie");
     }
-    
-
-    
 }
